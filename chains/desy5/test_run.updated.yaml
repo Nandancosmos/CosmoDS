@@ -1,0 +1,169 @@
+theory:
+  cosmo:
+    provides:
+    - angular_diameter_distance
+    - comoving_angular_distance
+    - Hubble
+    - rdrag
+    params:
+      H0: null
+      Omegam0: null
+      x0: null
+      lambda0: null
+      m: null
+      Mb: null
+      Omegab0: null
+    speed: -1
+    stop_at_error: false
+    version: null
+    external: !!python/name:model.CosmoBG ''
+    input_params:
+    - H0
+    - Omegab0
+    - Omegam0
+    - Mb
+    - x0
+    - lambda0
+    - m
+    output_params:
+    - rdrag
+likelihood:
+  bao.desi_dr2:
+    path: null
+    measurements_file: bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt
+    cov_file: bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt
+    rs_fid: 1
+    aliases:
+    - BAO
+    speed: 2000
+    type: BAO
+    rs_rescale: null
+    prob_dist: null
+    invcov_file: null
+    redshift: null
+    observable_1: null
+    observable_2: null
+    observable_3: null
+    grid_file: null
+    stop_at_error: false
+    version: null
+    input_params: []
+    output_params: []
+  sn.desy5:
+    path: null
+    dataset_file: DESY5/config.dataset
+    dataset_params: null
+    aliases:
+    - DESY5
+    use_abs_mag: false
+    speed: 100
+    type: SN
+    stop_at_error: false
+    version: null
+    input_params: []
+    output_params: []
+params:
+  H0:
+    prior:
+      min: 60
+      max: 80
+    proposal: 0.2
+    ref: 67.4
+    latex: H_0
+  Omegab0:
+    prior:
+      min: 0.01
+      max: 0.1
+    ref: 0.049
+    proposal: 0.0005
+    latex: \Omega_b
+  Omegam0:
+    prior:
+      min: 0.1
+      max: 0.5
+    ref: 0.315
+    proposal: 0.005
+    latex: \Omega_\mathrm{m}
+  Mb:
+    prior:
+      min: -20
+      max: -18
+    ref: -19.24
+    proposal: 0.01
+    latex: \M_{b}
+  x0:
+    prior:
+      min: 0
+      max: 0.5
+    proposal: 0.1
+    ref: 0.01
+    latex: x_0
+  lambda0:
+    prior:
+      min: 0.0
+      max: 2.0
+    proposal: 0.1
+    ref: 0.5
+    latex: \lambda_0
+  m:
+    derived: false
+    value: 2
+  Omega_phi0:
+    derived: 'lambda Omegam0: 1 - Omegam0'
+    latex: \Omega_{\phi,0}
+  w_phi0:
+    derived: 'lambda x0, Omegam0: (2*x0**2 + Omegam0 - 1) / (1 - Omegam0)'
+    latex: w_{\phi,0}
+  rd:
+    derived: 'lambda rdrag: rdrag'
+    latex: r_d
+  y0:
+    derived: 'lambda x0, Omegam0: np.sqrt(max(0.0, 1.0 - x0**2 - Omegam0))'
+    latex: y_0
+  chi2__BAO:
+    latex: \chi^2_\mathrm{BAO}
+    derived: true
+  chi2__SN:
+    latex: \chi^2_\mathrm{SN}
+    derived: true
+sampler:
+  mcmc:
+    burn_in: 40
+    max_tries: 40d
+    covmat: null
+    covmat_params: null
+    proposal_scale: 2.4
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: .inf
+    Rminus1_stop: 0.02
+    Rminus1_cl_stop: 0.2
+    Rminus1_cl_level: 0.95
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - H0
+        - Omegab0
+        - Omegam0
+        - Mb
+        - x0
+        - lambda0
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.5.7
+output: test_run
+version: 3.5.7
