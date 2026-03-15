@@ -41,7 +41,7 @@ $$ V(\phi) = V_0 \phi^m $$
 The cosmological evolution is expressed in terms of the dimensionless dynamical variables
 
 $$ x = \frac{\kappa \dot{\phi}}{\sqrt{6}H}, \qquad
-y = \frac{\kappa \sqrt{V(\phi)}}{\sqrt{3}H}. $$
+y = \frac{\kappa \sqrt{V(\phi)}}{\sqrt{3}H} , \qquad \lambda = -\frac{1}{\kappa V(\phi)}\frac{dV(\phi)}{d\phi}. $$
 
 Using these variables, the cosmological equations can be rewritten as an autonomous dynamical system that can be numerically integrated to compute cosmological observables such as:
 
