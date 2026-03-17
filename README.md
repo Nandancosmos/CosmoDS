@@ -84,7 +84,7 @@ These observables are then used in likelihood analyses within Cobaya.
 
 ## Citation
 
-If you use **CosmoDS** in your research, please cite the corresponding paper describing the software and methodology.
+If **CosmoDS** helps you in your research, please cite the corresponding paper describing the software and methodology and our research.
 
 ### Software paper
 
@@ -97,4 +97,28 @@ If you use **CosmoDS** in your research, please cite the corresponding paper des
       archivePrefix={arXiv},
       primaryClass={astro-ph.CO},
       url={https://arxiv.org/abs/2603.14740}, 
+}
+
+@article{Sahoo:2025cvz,
+    author = "Sahoo, Prasanta and Roy, Nandan and Mondal, Himadri Shekhar",
+    title = "{Constraint on momentum-transferred dark energy using DESI DR2}",
+    eprint = "2506.21295",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    doi = "10.1140/epjc/s10052-026-15341-8",
+    journal = "Eur. Phys. J. C",
+    volume = "86",
+    number = "2",
+    pages = "200",
+    year = "2026"
+}
+
+@article{Thanankullaphong:2026anl,
+    author = "Thanankullaphong, Phusuda and Sahoo, Prasanta and Hassan Puttasiddappa, Prajwal and Roy, Nandan",
+    title = "{Quintom Dark Energy: Future Attractor and Phantom Crossing in Light of DESI DR2 Observation}",
+    eprint = "2601.02284",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    month = "1",
+    year = "2026"
 }
