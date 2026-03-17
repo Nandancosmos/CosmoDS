@@ -89,9 +89,12 @@ If you use **CosmoDS** in your research, please cite the corresponding paper des
 ### Software paper
 
 ```bibtex
-@article{CosmoDS2026,
-  author  = {Author Name and Collaborators},
-  title   = {CosmoDS: A Dynamical-System Framework for Cosmological Model Analysis},
-  journal = {Journal of Open Source Software},
-  year    = {2026}
+@misc{roy2026cosmodspythontoolkitconstraining,
+      title={CosmoDS: A Python toolkit for constraining cosmological models via dynamical systems analysis with Cobaya}, 
+      author={Nandan Roy and Prasanta Sahoo},
+      year={2026},
+      eprint={2603.14740},
+      archivePrefix={arXiv},
+      primaryClass={astro-ph.CO},
+      url={https://arxiv.org/abs/2603.14740}, 
 }
